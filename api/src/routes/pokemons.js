@@ -62,9 +62,10 @@ router.get("/", async(req,res) => {
 
   router.post("/", async(req,res) => {
     const { id,name,types, hp, attack, defense, speed, height, weight, image} = req.body;
+    nameLower = name.toLowerCase()
     const pokemon = await createPokemon(
       id,
-      name,
+      nameLower,
       types,
       hp,
       attack,

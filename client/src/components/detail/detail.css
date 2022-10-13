@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+ 
+  .container {
+    width: 350px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  .cardDetail {
+    background: radial-gradient(
+        circle at 50% 0%, rgba(248, 105, 3, 0.559) 36%, rgba(255, 255, 255, 0) 36%
+    );
+    border: 2px solid #5b5b62;
+    position: relative;
+    width: 100%;
+    padding: 30px 20px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+  .card_img {
+    display: block;
+    width: 180px;
+    max-height: 200px;
+    position: relative;
+    margin: 20px auto;
+  }
+  .card_hp {
+    width: 80px;
+    background-color: #ffffff;
+    border: 2px solid #5b5b62;
+    font-weight: 400;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 30px;
+    margin-left: auto;
+    font-weight: 400;
+    ;
+  }
+  .name_poke {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 30px;
+    font-weight: 400;
+    border: 2px solid #5b5b62;
+  }
+  /* .types {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0 40px 0;
+  } */
+  .card_tipos {
+    background-color: #ffffff;
+    
+    border-radius: 30px;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: #030000;
+    border: 2px solid #5b5b62;
+  }
+  .card_attack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+
+  }
+  .card_defense {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+  }
+  .card_speed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+  }
+  .card_alt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+  }
+  .card_peso {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+  }
+
+  .botonD{
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: #030000;
+    border: 2px solid #5b5b62;
+  }

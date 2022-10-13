@@ -1,0 +1,59 @@
+.ContendorC{
+    width: 1000px;
+    height: 800px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border: 2px solid #5b5b62;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    justify-content: center;
+    justify-items: center;
+}
+
+.titulo{
+    margin-top: 10px;
+    ;
+}
+#nameInput{
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 0.4px;
+}
+#nameC{
+    
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+}
+#inputN{
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid #5b5b62;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.input2{
+    background-color: #ffffff00;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    font-weight: 600;
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 0.4px;
+}
+.typeSelect{
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid #5b5b62;
+}
+

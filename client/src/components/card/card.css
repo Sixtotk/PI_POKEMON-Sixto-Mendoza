@@ -1,0 +1,65 @@
+/* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+} */
+.contenedor_card{
+  display: inline-block;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    
+    padding: 10px;
+    grid-gap: 100px;
+    align-content: center
+
+}
+
+.card {
+  width: 270px;
+  height: 350px;
+  position: relative;
+  border: 2px solid #5b5b62;
+  border-radius: 10px;
+  background: radial-gradient(
+        circle at 50% 0%, rgba(248, 105, 3, 0.559) 36%, rgba(255, 255, 255, 0) 36%
+    );
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  font-size: 1.5rem;
+ 
+}
+.img_card{
+ display: flex;
+  width: 180px;
+  max-height: 200px;
+  position: relative;
+  margin: 20px auto;
+} 
+.poke_name_card{
+  color:black;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  padding: 8px 0;
+  
+}
+.types_card {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 40px 0;
+}
+
+.types_card h5 {
+  background-color: #ffffff;
+    font-weight: 400;
+    border-radius: 30px;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: #030000;
+    border: 2px solid #5b5b62;
+}
