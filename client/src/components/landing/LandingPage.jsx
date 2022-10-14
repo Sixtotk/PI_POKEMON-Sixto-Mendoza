@@ -10,11 +10,11 @@ export default function LandingPage(){
       <Link to ='/home'>
         <button className="botonLanding">¡Comenzar!</button>
       </Link>
+
       <div className="grid-container">
         <img className="imgLanding" src={ImagenLanding} alt="landing"/>
         <img className="imgLanding" src={Bienvenida} alt="bienvenida"/>
       </div>
-      
     </div>
   )
 }

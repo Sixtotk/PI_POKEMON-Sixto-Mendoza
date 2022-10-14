@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {Link} from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail } from "../../actions/index";
+import { getDetail, clear } from "../../actions/index";
 import './detail.css'
 
 export default function DetailPoke(props){
@@ -11,6 +11,7 @@ export default function DetailPoke(props){
 
   useEffect(() => {
     dispatch(getDetail(props.match.params.id));
+    return () => dispatch(clear())
   }, [dispatch, props.match.params.id])
 
   

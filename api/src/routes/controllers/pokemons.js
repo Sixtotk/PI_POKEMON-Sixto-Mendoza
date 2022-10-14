@@ -128,6 +128,7 @@ async function getPokemonsInApi(){
   }  
   
   async function getPokemonsDbById(id){
+  try{
     const pokeDbId = await Pokemon.findByPk(id, {
     include: {
       model: Types,
@@ -148,12 +149,33 @@ async function getPokemonsInApi(){
     speed: pokeDbId.speed,
     height: pokeDbId.height,
     weight: pokeDbId.weight,
-  };
+  };}catch(e){
+    console.log(e)
   }
+  }
+
+// async function deletePokemon(id){
+//   const pokeDbId = await Pokemon.findByPk(id, {
+//     include: {
+//       model: Types,
+//       attributes: ["name"],
+//       through: {
+//         attributes: [],
+//       },
+//     },
+//   });
+  
+//   if(pokeDbId){
+//     pokeDbId.destroy({
+//       where:{
+//       id: id}
+//   })
+// }
 
  
             
   async function createPokemon(id,name,types,hp,attack,defense,speed,height,weight,image){
+  try{
     if (!image) image = "https://i.imgur.com/G4WCJsE.png";
     const pokemon = await Pokemon.create({
       id,
@@ -175,7 +197,12 @@ async function getPokemonsInApi(){
     pokemon.addType(typeDb);
     pokemon.dataValues.types = typeDb.map(e => e.dataValues.name)
     return pokemon;
+  }catch(e){
+console.log(e)
+  }
   }   
+
+  
 
    // async function b(){
     //   var b = await getPokemonsDbById("45")

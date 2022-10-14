@@ -14,7 +14,7 @@
   }
   .cardDetail {
     background: radial-gradient(
-        circle at 50% 0%, rgba(248, 105, 3, 0.559) 36%, rgba(255, 255, 255, 0) 36%
+        circle at 50% 0%, rgba(248, 105, 3, 0.559) 36%, #ffffff 35%
     );
     border: 2px solid #5b5b62;
     position: relative;
@@ -72,7 +72,7 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
 
   }
   .card_defense {
@@ -80,28 +80,28 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   .card_speed {
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   .card_alt {
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   .card_peso {
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
   .botonD{

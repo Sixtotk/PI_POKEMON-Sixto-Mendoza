@@ -1,9 +1,4 @@
-/* * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-} */
+
 .contenedor_card{
   display: inline-block;
     text-align: center;
@@ -24,7 +19,7 @@
   border: 2px solid #5b5b62;
   border-radius: 10px;
   background: radial-gradient(
-        circle at 50% 0%, rgba(248, 105, 3, 0.559) 36%, rgba(255, 255, 255, 0) 36%
+        circle at 50% 0%, rgba(248, 105, 3, 0.559) 36%, #ffffff 35%
     );
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
   font-size: 1.5rem;

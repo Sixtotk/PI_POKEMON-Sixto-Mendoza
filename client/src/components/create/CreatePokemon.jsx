@@ -35,7 +35,7 @@ export default function PokemonCreate(){
       errors.name = 'El pokemon ya existe' //f
     } else if (!input.name) {
       errors.name = 'El nombre es requerido'
-    } else if (input.name.length <= 4 && !input.name.match(/^[a-zA-Z_]+( [a-zA-Z_]+)*$/)) {
+    } else if (input.name.length <= 4 && !input.name.match(/^[a-zA-Z\s]*$/)) {
       errors.name = 'El nombre no puede tener simbolos'
     }
   //!==================================
@@ -111,6 +111,7 @@ export default function PokemonCreate(){
    return errors;
    };
 
+
 function handleChange(e) {
   setInput({
     ...input,
@@ -120,11 +121,12 @@ function handleChange(e) {
     ...input,
     [e.target.name]: e.target.value
   }))
-  console.log(allPokemons)
-  console.log(input)
-  console.log(errors)
-  console.log(input)
+  // console.log(allPokemons)
+  // console.log(input)
+  // console.log(errors)
+  // console.log(input)
 }
+
 
 function handleSelect(e) {
   if (!input.types.includes(e.target.value))
@@ -141,140 +143,150 @@ function handleSelect(e) {
   console.log(errors)
 }
 
+
 function handleSubmit(e){
   if (input.types.length !== 0 && input.types.length < 3) {
-  e.preventDefault();
-  console.log(input)
-  dispatch(postPokemon(input))
-  alert("Pokemon Creado")
-  setInput({
-    name: "",
-    hp: "", 
-    attack: "", 
-    defense: "",
-    speed: "",
-    height: "",
-    weight: "",
-    image: "",
-    types: [],
-  })
-  history.push('/home')
+    e.preventDefault();
+    console.log(input)
+    dispatch(postPokemon(input))
+    alert("Pokemon Creado")
+    setInput({
+      name: "",
+      hp: "", 
+      attack: "", 
+      defense: "",
+      speed: "",
+      height: "",
+      weight: "",
+      image: "",
+      types: [],
+    })
+    history.push('/home')
+  }  
 }
-  
-}
 
 
 
-  useEffect(() => {
-    dispatch(getTypes());
-  }, [dispatch]);
+useEffect(() => {
+  dispatch(getTypes());
+}, [dispatch]);
 
-  return(
-    <div>
-      <Link to = '/home'><button
-      id="inputN">Volver</button></Link>
-      <div className="ContendorC">
-      <h1 className="titulo"><img src={crealo} alt="crealo"/></h1>
-      <form onSubmit={handleSubmit}>
-        <div id="nameInput">
-          <label id="nameC">Name:</label>
-          <input id="inputN"
-            type='text' 
-            value= {input.name}
-            name = 'name'
-            onChange={(e)=>handleChange(e)}/>
-            {errors.name && (
-            <p className="error">{errors.name}</p>
+return(
+  <div>
+
+    <Link to = '/home'><button
+    id="inputN">Volver</button></Link>
+    <div className="ContendorC">
+    <h1 className="titulo"><img src={crealo} alt="crealo"/></h1>
+    <form onSubmit={handleSubmit}>
+
+      <div id="nameInput">
+        <label id="nameC">Name:</label>
+        <input id="inputN"
+          type='text' 
+          value= {input.name}
+          name = 'name'
+          onChange={(e)=>handleChange(e)}/>
+          {errors.name && (
+          <p className="error">{errors.name}</p>
           )}
-        </div>
-        <div id="nameInput">
-          <label id="nameC">hp:</label>
-          <input 
+      </div>
+
+      <div id="nameInput">
+        <label id="nameC">hp:</label>
+        <input 
           id="inputN"
-            className="hp"
-            type='text' 
-            value= {input.hp}
-            name = 'hp'
-            onChange={(e)=>handleChange(e)}/>
-            {errors.hp && (
-            <p className="error">{errors.hp}</p>
+          className="hp"
+          type='text' 
+          value= {input.hp}
+          name = 'hp'
+          onChange={(e)=>handleChange(e)}/>
+          {errors.hp && (
+          <p className="error">{errors.hp}</p>
           )}
-        </div>
-        <div id="nameInput">
-          <label id="nameC">attack:</label>
-          <input 
+      </div>
+
+      <div id="nameInput">
+        <label id="nameC">attack:</label>
+        <input 
           id="inputN"
-            type='text' 
-            value= {input.attack}
-            name = 'attack'
-            onChange={(e)=>handleChange(e)}/>
-            {errors.attack && (
-            <p className="error">{errors.attack}</p>
+          type='text' 
+          value= {input.attack}
+          name = 'attack'
+          onChange={(e)=>handleChange(e)}/>
+          {errors.attack && (
+          <p className="error">{errors.attack}</p>
           )}
-        </div>
-        <div id="nameInput">
-          <label id="nameC">defense:</label>
-          <input 
+      </div>
+
+      <div id="nameInput">
+        <label id="nameC">defense:</label>
+        <input 
           id="inputN"
-            type='text' 
-            value= {input.defense}
-            name = 'defense'
-            onChange={(e)=>handleChange(e)}/>
-            {errors.defense && (
-            <p className="error">{errors.defense}</p>
+          type='text' 
+          value= {input.defense}
+          name = 'defense'
+          onChange={(e)=>handleChange(e)}/>
+          {errors.defense && (
+          <p className="error">{errors.defense}</p>
           )}
-        </div>
-        <div id="nameInput">
-          <label id="nameC">speed:</label>
-          <input 
+      </div>
+
+      <div id="nameInput">
+        <label id="nameC">speed:</label>
+        <input 
           id="inputN"
-            type='text' 
-            value= {input.speed}
-            name = 'speed'
-            onChange={(e)=>handleChange(e)}/>
-            {errors.speed && (
-            <p className="error">{errors.speed}</p>
+          type='text' 
+          value= {input.speed}
+          name = 'speed'
+          onChange={(e)=>handleChange(e)}/>
+          {errors.speed && (
+          <p className="error">{errors.speed}</p>
           )}
-        </div>
-        <div id="nameInput">
-          <label id="nameC">height:</label>
-          <input 
+      </div>
+
+      <div id="nameInput">
+        <label id="nameC">height:</label>
+        <input 
           id="inputN"
-            type='text' 
-            value= {input.height}
-            name = 'height'
-            onChange={(e)=>handleChange(e)}/>
-            {errors.height && (
-            <p className="error">{errors.height}</p>
+          type='text' 
+          value= {input.height}
+          name = 'height'
+          onChange={(e)=>handleChange(e)}/>
+          {errors.height && (
+          <p className="error">{errors.height}</p>
           )}
-        </div>
-        <div id="nameInput">
-          <label id="nameC">weight:</label>
-          <input 
+      </div>
+
+      <div id="nameInput">
+        <label id="nameC">weight:</label>
+        <input 
           id="inputN"
-            type='text' 
-            value= {input.weight}
-            name = 'weight'
-            onChange={(e)=>handleChange(e)}/>
-            {errors.weight && (
-            <p className="error">{errors.weight}</p>
+          type='text' 
+          value= {input.weight}
+          name = 'weight'
+          onChange={(e)=>handleChange(e)}/>
+          {errors.weight && (
+          <p className="error">{errors.weight}</p>
           )}
-        </div>
-        <div id="nameInput">
-          <label id="nameC">image:</label>
-          <input 
+      </div>
+
+      <div id="nameInput">
+        <label id="nameC">image:</label>
+        <input 
           id="inputN"
-            type='text' 
-            value= {input.image}
-            name = 'image'
-            onChange={(e)=>handleChange(e)}/>
-            {errors.image && (
-            <p className="error">{errors.image}</p>
+          type='text' 
+          value= {input.image}
+          name = 'image'
+          onChange={(e)=>handleChange(e)}/>
+          {errors.image && (
+          <p className="error">{errors.image}</p>
           )}
-        </div>
-        <div className="input2">
+      </div>
+
+      <div className="input2">
         <select className="typeSelect"
-        onChange={(e) =>handleSelect(e)}>
+          onChange={(e) =>handleSelect(e)}>
           {types.map((ty) =>{
             return <option value={ty.name}>{ty.name}</option>
           })}{errors.input && (
@@ -283,14 +295,15 @@ function handleSubmit(e){
         </select>
         
         {input.types.map(el => el + ' ,')}
-        </div>
-        <button 
+      </div>
+
+      <button 
         type="submit"
         id="inputN" 
         disabled={Object.entries(errors).length ? true : false}>Crear Pokemon</button>
-            </form>
-            </div>
-        </div>
+    </form>
+    </div>
+  </div>
         
-    )
+  )
 }

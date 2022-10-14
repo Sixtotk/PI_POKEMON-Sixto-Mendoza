@@ -14,18 +14,21 @@ function rootReducer(state = initialState, action){
       return{
          ...state,
         pokemons: action.payload,
-        allPokemons: action.payload
-       }
+        allPokemons: action.payload  
+      }
+
     case GET_TYPES:
       return {
         ...state,
         types: action.payload
       }
+
     case 'GET_DETAIL':
       return{
         ...state,
         detail: action.payload
       }  
+
     case 'FILTER_CREATE':
       const allPokemons = state.allPokemons;
       const createdFilter = action.payload === 'db' ? allPokemons.filter(el => el.createdInDb) : state.allPokemons.filter(el => !el.createdInDb)
@@ -33,15 +36,16 @@ function rootReducer(state = initialState, action){
         ...state,
         pokemons: action.payload === "all" ? state.allPokemons : createdFilter
       }
+
     case 'FILTER_BY_NAME':
-      let sortedArr = action.payload === 'a-z' ? state.allPokemons.sort((a,b) => {
+      let sortedArr = action.payload === 'a-z' ? state.pokemons.sort((a,b) => {
         if(a.name > b.name){
           return 1;
         }
         if(a.name < b.name) {
           return -1;
         } return 0;
-      }) : state.allPokemons.sort((a,b) => {
+      }) : state.pokemons.sort((a,b) => {
         if(a.name > b.name){
           return -1
         }
@@ -53,15 +57,16 @@ function rootReducer(state = initialState, action){
         ...state,
         pokemons: sortedArr
       }
-      case 'FILTER_BY_ATTACK':
-      let sortedArrA = action.payload === 'debiles' ? state.allPokemons.sort((a,b) => {
+
+    case 'FILTER_BY_ATTACK':
+      let sortedArrA = action.payload === 'debiles' ? state.pokemons.sort((a,b) => {
         if(a.attack > b.attack){
           return 1;
         }
         if(a.attack < b.attack) {
           return -1;
         } return 0;
-      }) : state.allPokemons.sort((a,b) => {
+      }) : state.pokemons.sort((a,b) => {
         if(a.attack > b.attack){
           return -1
         }
@@ -73,30 +78,37 @@ function rootReducer(state = initialState, action){
         ...state,
         pokemons: sortedArrA
       }
-    case 'FILTER_TYPES':
-        let filterType = state.allPokemons.filter((e) => {
-           if(e.types?.includes(action.payload)) 
-           return e 
-          })
-        if(action.payload === "All"){
-          filterType = state.allPokemons
-        }
-        return {
-          ...state,
-          pokemons: filterType
-        }
     
-
-       
+    case 'FILTER_TYPES':
+      let filterType = state.allPokemons.filter((e) => {
+      if(e.types?.includes(action.payload)) 
+        return e 
+      })
+      if(action.payload === "All"){
+        filterType = state.allPokemons
+      }
+      return {
+        ...state,
+        pokemons: filterType
+      }
+     
     case 'POST_POKEMON':
       return {
         ...state
       }
+      
     case 'GET_NAME_POKEMON':
       return{
         ...state,
         pokemons: action.payload
       }
+    case 'CLEAR':
+      return{
+        ...state,
+        detail: []
+      }
+
+    
     default:
       return state;
   }

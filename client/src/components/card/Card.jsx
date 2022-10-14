@@ -14,7 +14,7 @@ export default function Card({name, image, types }){
         <h3 className="poke_name_card">{name}</h3>
         <div className="types_card">{typesMapped}</div>  
       </div>
-     </div>
+    </div>
   )
 }
 

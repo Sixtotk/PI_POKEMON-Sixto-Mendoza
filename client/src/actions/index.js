@@ -26,11 +26,14 @@ export function getTypes(){
 }
 export function getPokemonsbyName(name){
   return async function(dispatch){
+  try{
     var json = await axios.get(`http://localhost:3001/pokemons?name=${name}`);
     return dispatch({
       type: 'GET_NAME_POKEMON',
       payload: json.data
-    })
+    })}catch{
+      alert("no existe el pokemon")
+    }
   }
 
 }
@@ -73,10 +76,15 @@ export function filterPokemonsByAttack(payload){
   }
 }
 
-
 export function filterTypes(payload) {
   return {
     type: 'FILTER_TYPES',
     payload
+  }
+}
+
+export function clear(){
+  return{
+    type: 'CLEAR'
   }
 }
