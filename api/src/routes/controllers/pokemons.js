@@ -11,6 +11,7 @@ async function getPokemonsInApi(){
         let pokemonFullData = pokemons.map(r=> r.data)
         let pokemon = pokemonFullData.map(r => {
           return{
+            
             id: r.id,
             name: r.name,
             types: r.types.map(e=>e.type.name),
