@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import dotenv from "dotenv";
 dotenv.config();
 
-axios.defaults.baseURL = process.env.React_APP_API || "https://pipokemon-sixto-mendoza-production.up.railway.app";
+axios.defaults.baseURL = process.env.React_APP_API || "pipokemon-sixto-production.up.railway.app";
 
 
 ReactDOM.render(
