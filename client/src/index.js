@@ -10,7 +10,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 axios.defaults.baseURL = process.env.React_APP_API || "pipokemon-sixto-production.up.railway.app";
-
+// prueba
 
 ReactDOM.render(
   <Provider store={store}>
