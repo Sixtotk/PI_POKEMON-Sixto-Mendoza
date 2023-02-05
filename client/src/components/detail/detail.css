@@ -14,7 +14,7 @@
   }
   .cardDetail {
     background: radial-gradient(
-        circle at 50% 0%, rgba(248, 105, 3, 0.559) 36%, #ffffff 35%
+        circle at 50% 0%, rgba(248, 105, 3, 0.746) 36%, #ffffffc0 35%
     );
     border: 2px solid #5b5b62;
     position: relative;
