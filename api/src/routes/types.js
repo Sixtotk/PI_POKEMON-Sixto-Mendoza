@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { getTypes, createType } = require("./controllers/types.js")
+const { getTypes } = require("./controllers/types.js")
 const router = Router();
 
 router.get("/", async (req, res) => {
@@ -10,6 +10,5 @@ router.get("/", async (req, res) => {
         console.log(e)
     }
 })
-
 
 module.exports = router;

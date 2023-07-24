@@ -2,7 +2,6 @@ const  axios  = require("axios");
 const { Types } = require("../../db.js");
 
 async function getTypes(){
-  try{
   let DbTypes = await Types.findAll().catch(e => undefined)
   if(!DbTypes.length){
     const types = await axios.get("https://pokeapi.co/api/v2/type").catch(e=>{
@@ -15,9 +14,6 @@ async function getTypes(){
       return DbTypes;
     }
   return(DbTypes)   
-    }catch(e){
-      
-    }}
-    
+    }
 module.exports = { getTypes }
   

@@ -1,7 +1,6 @@
 //const  axios  = require("axios");
 const { Router } = require("express");
-const { where } = require("sequelize");
-
+//const {Pokemon, Types} = require("../db");
 const {
     getPokemonsInApi,
     getPokemonsInDb,
@@ -23,7 +22,7 @@ router.get("/", async(req,res) => {
           if(!pokemonApiname){// si no encuentra
           const pokeDb = await getPokemonsDbByName(nameLower)// uso Db
             if(!pokeDb){// si no encuentra
-              res.state(409).send('pokemon no existe');// no encontrado
+              res.json({ error: "Pokemon no encontrado!" });// no encontrado
             }else return res.json(pokeDb);//si encuentra en Db muestra
           }else return  res.json(pokemonApiname)// si encuentra en api muestra
         }
@@ -36,11 +35,11 @@ router.get("/", async(req,res) => {
       }
       catch(e){
         console.log(e)
-        return res.status(409).send(e)
+        return res.status(410).send(e)
       }
     }
 );
-
+  
   router.get("/:pokemonId", async(req,res) => {
     const { pokemonId } = req.params;
       try{
@@ -61,17 +60,11 @@ router.get("/", async(req,res) => {
     }
   );
 
-
-
-
-
   router.post("/", async(req,res) => {
-    try{
     const { id,name,types, hp, attack, defense, speed, height, weight, image} = req.body;
-    nameLower = name.toLowerCase()
     const pokemon = await createPokemon(
       id,
-      nameLower,
+      name,
       types,
       hp,
       attack,
@@ -82,11 +75,7 @@ router.get("/", async(req,res) => {
       image
       );
     res.json(pokemon);
-  }catch(e){
-    console.log(e)
-  }});
-
-
+  });
   
 
 module.exports = router;
