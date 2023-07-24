@@ -1,5 +1,6 @@
 import React from 'react'
 import "../home/home.css"
+import './SearchBar.css'
 
 export default function Paginado  ({pokemonsXpagina, allPokemons, paginado }) {
    const pageNumber = []

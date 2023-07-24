@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getPokemonsbyName } from "../../actions/index";
-import '../home/home.css'
+import buscar from '../../img/2d50a6320bf86c1db4964edb8503c79f.png'
+import './SearchBar.css'
 
 
 export default function SearchBar(){
@@ -12,7 +13,6 @@ export default function SearchBar(){
   function handleInputChange(e){
     e.preventDefault()
     setName(e.target.value);
-    console.log(name)
   }
 
   function handleSubmit(e){
@@ -22,17 +22,17 @@ export default function SearchBar(){
   }
 
   return(
-    <div className="nav">
+    <div className="navegador">
       <input
-        className=" input"
+        className="input-createav"
         type="text"
         placeholder="buscar un pokemon..."
         onChange={(e) => handleInputChange(e)} />
       <button
-        className=" boton2"
+        className="botonNav"
         type="submit"
         onClick={(e) => handleSubmit(e)}
-        >Buscar</button>
+        ><img className="img-buscar" src={buscar} alt='img-buscar'/></button>
     </div>
   )
 }

@@ -1,127 +1,210 @@
-body {
-    background-color: red;
+.principal-home {
+    background-color: #F7F7FF;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .contenedorNav{
-    margin-left: 19%;
-    border: 2px solid #5b5b62;
-    border-radius: 10px;
-    background-color: rgba(248, 105, 3, 0.559);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
-    width: 1200px;
+    width: 100%;
+    height: auto;
+    background-color: #4D6CFA;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+
+.cuadroNav{
+  width: 80%;
+  padding: 20px;
+  background-color: rgba(164, 14, 76, 80%);
+  margin-bottom: 15px;
+  border-radius: 50px;
+}
+
+.pokeapp{
+    padding: 5px;
+    width: 250px;
+    height: auto;
+}
+
+
+
+.contenedor-img-pokeapp{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .unir{
-    margin: 10px 0px 10px 0px;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
 }
-.elegir{
+
+.crearA{
     display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-    justify-content: space-around;
-}
-
-.recarga{
-   
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #5b5b62;
-    font-weight: 400;
-}
-
-.Letras{
-    
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #5b5b62;
-    font-weight: 400;
-}
-
-.creados{
-    
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #5b5b62;
-    font-weight: 400;
-}
-
-.fuerza{
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #5b5b62;
-    font-weight: 400;
-}
-.tipos{
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #5b5b62;
-    font-weight: 400;
+    align-items: center;
+    width: 75%;
 }
 
 .crear{
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #5b5b62;
-    font-weight: 400;
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
 }
 
-.buttonPaginado{
-    
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #5b5b62;
-    font-weight: 400;
-    width: 40px
+.recarga{
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    width: 25%;
 }
+
+.img-recargar{
+  width: 100%;
+  height: auto;
+}
+
+.img-crear{
+  width: 90%;
+  height: auto;
+}
+
+.elecciones {
+    width: 45%;
+    margin: 1.5%;
+    padding: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: #FFF07C;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 15px;
+}
+
+option {
+    background-color: #4D6CFA; 
+}
+
 .navPaginado{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around
-}
-.unir{
-    
-    display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     justify-content: space-around
 }
-.nav{
-    display: flex;
-    flex-direction: row;
+
+
+.buttonPaginado{
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(77, 108, 250, 50);
+    border-radius: 10px;
+    border: 1px solid #FFF07C;
+    color: #FFF07C;
+    font-weight: 400;
+    width: 28px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.all-cards{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.a-cards {
+    width: 227px;
+    margin: 2%;
+}
+
+@media (min-width: 1024px) {
+
+    .contenedorNav{
+        width: 40%;  
+    }  
+
+    .all-cards{
+        width: 60%;
+        height: 100%;
+    }
+
+    .cuadroNav{
+        width: 80%;
+        height: 80%;
+      }
+
+    .contenedor-img-pokeapp{
+        height: 150px;
+    }
+
+    .unir{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .crearA{
+        display: flex;
+        align-items: center;
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .img-crear{
+        width: 100%;
+      }
+
+    .recarga{    
+        width: 40%;
+        margin-top: 20px;
+    }
     
+    .Principal-elecciones{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .elecciones{
+        width: 90%;
+        font-size: 34px;
+        margin: 40px;
+    }
+    
+    .buttonPaginado{
+        font-size: 34px;
+        width: 48px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .contenedorNav{
+        width: 30%;    
+    }
+    
+    .all-cards{
+        width: 70%;    
+    }
+
+    .elecciones{
+        width: 90%;
+        font-size: 28px;
+        margin: 40px;
+    }  
 }
 
-.boton2{
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #5b5b62;
-    font-weight: 400;
-}
 
-.input{
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #5b5b62;
-    font-weight: 400;
-}
+
+ 

@@ -1,15 +1,16 @@
 import React from "react";
 import {useState, useEffect} from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { postPokemon, getTypes } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import './create.css'
-import crealo from '../imagenes/782e75444862add7e29c270f524eaa0a.png'
+import crealo from '../../img/crea.png'
+import volver from '../../img/volver.png'
 
 
 export default function PokemonCreate(){
   const dispatch = useDispatch()
-  const history = useHistory()
+  const history = useNavigate()
   const allPokemons = useSelector((state)=> state.pokemons);
   const types = useSelector((state) => state.types)
 
@@ -161,7 +162,7 @@ function handleSubmit(e){
       image: "",
       types: [],
     })
-    history.push('/home')
+    history('/home')
   }  
 }
 
@@ -172,17 +173,16 @@ useEffect(() => {
 }, [dispatch]);
 
 return(
-  <div>
+  <div className="create-principal">
 
-    <Link to = '/home'><button
-    id="inputN">Volver</button></Link>
-    <div className="ContendorC">
-    <h1 className="titulo"><img src={crealo} alt="crealo"/></h1>
-    <form onSubmit={handleSubmit}>
+   <img className="titulo-create" src={crealo} alt="crealo"/> 
+    
+    <div className="Contendor-create">
+    <form className="form-create" onSubmit={handleSubmit}>
 
-      <div id="nameInput">
-        <label id="nameC">Name:</label>
-        <input id="inputN"
+      <div id="createInput">
+        <label id="label-create">Name:</label>
+        <input id="input-create"
           type='text' 
           value= {input.name}
           name = 'name'
@@ -192,10 +192,10 @@ return(
           )}
       </div>
 
-      <div id="nameInput">
-        <label id="nameC">hp:</label>
+      <div id="createInput">
+        <label id="label-create">hp:</label>
         <input 
-          id="inputN"
+          id="input-create"
           className="hp"
           type='text' 
           value= {input.hp}
@@ -206,10 +206,10 @@ return(
           )}
       </div>
 
-      <div id="nameInput">
-        <label id="nameC">attack:</label>
+      <div id="createInput">
+        <label id="label-create">attack:</label>
         <input 
-          id="inputN"
+          id="input-create"
           type='text' 
           value= {input.attack}
           name = 'attack'
@@ -219,10 +219,10 @@ return(
           )}
       </div>
 
-      <div id="nameInput">
-        <label id="nameC">defense:</label>
+      <div id="createInput">
+        <label id="label-create">defense:</label>
         <input 
-          id="inputN"
+          id="input-create"
           type='text' 
           value= {input.defense}
           name = 'defense'
@@ -232,10 +232,10 @@ return(
           )}
       </div>
 
-      <div id="nameInput">
-        <label id="nameC">speed:</label>
+      <div id="createInput">
+        <label id="label-create">speed:</label>
         <input 
-          id="inputN"
+          id="input-create"
           type='text' 
           value= {input.speed}
           name = 'speed'
@@ -245,10 +245,10 @@ return(
           )}
       </div>
 
-      <div id="nameInput">
-        <label id="nameC">height:</label>
+      <div id="createInput">
+        <label id="label-create">height:</label>
         <input 
-          id="inputN"
+          id="input-create"
           type='text' 
           value= {input.height}
           name = 'height'
@@ -258,10 +258,10 @@ return(
           )}
       </div>
 
-      <div id="nameInput">
-        <label id="nameC">weight:</label>
+      <div id="createInput">
+        <label id="label-create">weight:</label>
         <input 
-          id="inputN"
+          id="input-create"
           type='text' 
           value= {input.weight}
           name = 'weight'
@@ -271,10 +271,10 @@ return(
           )}
       </div>
 
-      <div id="nameInput">
-        <label id="nameC">image:</label>
+      <div id="createInput">
+        <label id="label-create">image:</label>
         <input 
-          id="inputN"
+          id="input-create"
           type='text' 
           value= {input.image}
           name = 'image'
@@ -284,7 +284,7 @@ return(
           )}
       </div>
 
-      <div className="input2">
+      
         <select className="typeSelect"
           onChange={(e) =>handleSelect(e)}>
           {types.map((ty) =>{
@@ -293,16 +293,21 @@ return(
             <p className="error">{errors.input}</p>
           )}
         </select>
-        
+        <div className="input-type">
         {input.types.map(el => el + ' ,')}
       </div>
 
       <button 
         type="submit"
-        id="inputN" 
+        id="input-create" 
         disabled={Object.entries(errors).length ? true : false}>Crear Pokemon</button>
     </form>
+
+    
     </div>
+    <Link to = '/home' className="a-create">
+    <img className="volver-create" src={volver} alt="crealo"/>
+    </Link>
   </div>
         
   )
