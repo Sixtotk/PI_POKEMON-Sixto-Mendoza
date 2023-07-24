@@ -13,7 +13,7 @@ import { filterPokemonsCreate,
 import Card from '../card/Card'
 import Paginado from "../paginado/Paginado";
 import SearchBar from "../paginado/SearchBar";
-import './home.css'
+// import './home.css'
 import Saludo from '../imagenes/b083609574e798ca74a4048b61f2dff7.png'
 
 export function Home (){

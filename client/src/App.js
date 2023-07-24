@@ -1,8 +1,8 @@
 import './App.css';
+import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import React from 'react';
-import LandingPage from './components/landing/LandingPage';
+import LandingPage from './components/landing/LandingPage'
 import {Home} from './components/home/Home';
 import CreatePokemon from './components/create/CreatePokemon';
 import Detail from './components/detail/Detail';
