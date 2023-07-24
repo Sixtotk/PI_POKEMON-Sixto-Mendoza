@@ -109,12 +109,6 @@ return(
           <option value="z-a">Z-A</option>
         </select>
 
-        <select className="elecciones" onChange={e => handlefilterCreated(e)}>
-          <option value="all"> Ordena por estado</option>
-          <option value="api" >Existentes</option>
-          <option value="db" >Creados</option>
-        </select>
-
         <select className="elecciones" onChange={(e) => handleSortAttack(e)}>
           <option value="All">Ordena por fuerza</option>
           <option value="debiles">De mas debil a mas fuerte</option>

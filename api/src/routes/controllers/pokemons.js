@@ -2,29 +2,73 @@ const  axios  = require("axios");
 const {Pokemon, Types} = require("../../db.js");
 
 
-async function getPokemonsInApi(){
-    try{
+async function getPokemonsInApi() {
+  try {
+    const pokemonDb = await Pokemon.findAll({
+      include: {
+        model: Types,
+        through: {
+          attributes: [],
+        },
+      },
+      attributes: ["id", "name", "image", "attack"],
+    });
+
+    if (!pokemonDb.length) {
       const pokeapi = await axios("https://pokeapi.co/api/v2/pokemon?limit=40");
       const pokeUrls = pokeapi.data.results.map(pokemon => axios(pokemon.url));
-      let pokemons = Promise.all(pokeUrls)
-      .then(pokemons => {
-        let pokemonFullData = pokemons.map(r=> r.data)
-        let pokemon = pokemonFullData.map(r => {
-          return{
-            id: r.id,
-            name: r.name,
-            types: r.types.map(e=>e.type.name),
-            image: r.sprites.other.home.front_default
-          }   
-        })
-        return pokemon;
-      })
-      return pokemons
+      let pokemons = await Promise.all(pokeUrls);
+      let pokemonFullData = pokemons.map(r => r.data);
+
+      await Promise.all(pokemonFullData.map(async r => {
+        let pokemonData = {
+          name: r.name,
+          types: r.types.map(e => e.type.name),
+          image: r.sprites.other.home.front_default,
+          hp: r.stats[0].base_stat,
+          attack: r.stats[1].base_stat,
+          defense: r.stats[2].base_stat,
+          speed: r.stats[5].base_stat,
+          height: r.height,
+          weight: r.weight,
+        };
+
+        const pokemon = await Pokemon.create(pokemonData);
+
+        // Asociar los tipos a través de la tabla intermedia PokemonTypes
+        const types = r.types.map(e => e.type.name);
+        const typeDb = await Types.findAll({
+          where: {
+            name: types,
+          },
+        });
+
+        await pokemon.addTypes(typeDb);
+
+        // Actualizar el valor de types en el objeto para incluir los nombres de los tipos
+        pokemon.dataValues.types = typeDb.map(e => e.dataValues.name);
+      }));
+
+      const findPokemos = await Pokemon.findAll({
+        include: {
+          model: Types,
+          through: {
+            attributes: [],
+          },
+        },
+        attributes: ["id", "name", "image", "attack"],
+      });
+
+      console.log("Todos los pokemons se han guardado en la base de datos.");
+      return findPokemos;
+    } else {
+      return pokemonDb;
     }
-    catch(e){
-      console.log(e)
-    }
+  } catch (e) {
+    console.log(e);
+    throw e;
   }
+}
 
   async function getPokemonsInDb(){
     try{
@@ -80,12 +124,13 @@ async function getPokemonsInApi(){
         },
         attributes: ["id", "name", "attack", "image"],
       });
-      const arr = PokeDbName.map((e) => ({
+      const arr = PokeDbName.map((e) => ([{
         id: e.id,
         name: e.name,
         image: e.image,
         types: e.types.map((e) => e.name),
-      }));
+        
+      }]));
       return arr[0]
     }
     catch(e){
