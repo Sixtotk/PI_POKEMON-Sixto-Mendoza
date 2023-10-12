@@ -1,101 +1,106 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
 
-  }
- 
-  .container-detail {
-    background-color: #FFF07C;
-    width: 100vw;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-    
-    
-    
-  }
-  .cardDetail {
-    background: radial-gradient(
-        circle at 50% 0%, rgba(164, 14, 76, 100) 36%, #FFF07C 31%
-    );
-    border: 2px solid #5b5b62;
-    position: relative;
-    width: 300px;
-    height: 580px;
-    padding: 30px 20px;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-  }
-  .card_img {
-    display: block;
-    
-    width: 180px;
-    max-height: 200px;
-    position: relative;
-    margin: 20px auto;
-  }
-  .card_hp {
-    width: 120px;
-    position: absolute;
-    right: 4px;
-    top: 8px;
-    background-color: #ffffff;
-    border: 2px solid #FFF07C;
-    font-weight: 400;
-    text-align: center;
-    padding: 8px 0;
-    border-radius: 30px;
-    ;
-  }
-  .name_poke {
-    background-color: #ffffff;
-    text-align: center;
-    padding: 8px 0;
-    border-radius: 30px;
-    border: 2px solid rgba(164, 14, 76);
-    font-weight: 700;
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: rgba(164, 14, 76);
-  }
+/* Estilos del contenedor principal */
+.container-detail {
+  background-color: #FFF07C;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
 
-  .card_info {
-    display: flex;
-    justify-content: start;
-    color: rgba(164, 14, 76);
-    font-size: 28px;
+/* Estilos de la tarjeta de detalle */
+.cardDetail {
+  background: radial-gradient(circle at 50% 0%, rgba(164, 14, 76, 100) 36%, #FFF07C 31%);
+  border: 2px solid #5b5b62;
+  position: relative;
+  width: 300px;
+  height: 580px;
+  padding: 30px 20px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
 
-  }
+/* Estilos para la imagen del Pokémon */
+.card_img {
+  display: block;
+  width: 180px;
+  max-height: 200px;
+  position: relative;
+  margin: 20px auto;
+}
 
-  .card_tipos {
-    background-color: #ffffff;
-    border-radius: 30px;
-    font-size: 24px;
-    letter-spacing: 0.4px;
-    font-weight: 700;
-    padding: 5px 20px;
-    border-radius: 20px;
-    color: rgba(164, 14, 76);
-    text-align: center;
-    border: 2px solid rgba(164, 14, 76);
-    margin-top: 10px;
-  }
-  
-  .avolver-detail {
-    margin-top: 50px;
-    width: 100px;
-  }
-  .volver-detail{
-    width: 100%;
-  }
+/* Estilos para el HP del Pokémon */
+.card_hp {
+  width: 120px;
+  position: absolute;
+  right: 4px;
+  top: 8px;
+  background-color: #ffffff;
+  border: 2px solid #FFF07C;
+  font-weight: 400;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 30px;
+}
 
-  .pokedex-detail{
-    margin-bottom: 24px;
-    width: 240px;
-  }
+/* Estilos para el nombre del Pokémon */
+.name_poke {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 30px;
+  border: 2px solid rgba(164, 14, 76);
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: rgba(164, 14, 76);
+}
+
+/* Estilos para la información del Pokémon */
+.card_info {
+  display: flex;
+  justify-content: flex-start;
+  color: rgba(164, 14, 76);
+  font-size: 28px;
+}
+
+/* Estilos para los tipos del Pokémon */
+.card_tipos {
+  background-color: #ffffff;
+  border-radius: 30px;
+  font-size: 24px;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: rgba(164, 14, 76);
+  text-align: center;
+  border: 2px solid rgba(164, 14, 76);
+  margin-top: 10px;
+}
+
+/* Estilos para el botón de volver */
+.avolver-detail {
+  margin-top: 50px;
+  width: 100px;
+}
+
+.volver-detail {
+  width: 100%;
+}
+
+/* Estilos para la imagen del Pokédex */
+.pokedex-detail {
+  margin-bottom: 24px;
+  width: 240px;
+}
 

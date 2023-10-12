@@ -3,6 +3,7 @@ export const GET_POKEMONS = 'GET_POKEMONS'
 export const GET_TYPES = 'GET_TYPES'
 //https://pokemon-app-ycbn.onrender.com/pokemons
 
+
 export function getPokemons() {
   return async function (dispatch) {
     try {
