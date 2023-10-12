@@ -8,9 +8,15 @@ const {
   PGUSER, PGPASSWORD, PGHOST, PGPORT, PGDATABASE
 } = process.env;
 
-const sequelize = new Sequelize(`postgresql://${ PGUSER }:${ PGPASSWORD }@${ PGHOST }:${ PGPORT }/${ PGDATABASE }`, {
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+const sequelize = new Sequelize(`postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}`, {
+  logging: false,
+  native: false,
+  dialect: 'postgres', // Asegúrate de establecer el dialecto como 'postgres'
+  dialectOptions: {
+    ssl: {
+      require: true, // Habilita SSL
+    },
+  },
 });
 
 // sequelize.authenticate()
